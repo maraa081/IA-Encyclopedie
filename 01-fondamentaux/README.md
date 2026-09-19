@@ -28,7 +28,7 @@ la fuite de données.
 Supervisé          entrées + réponses attendues  -> apprendre la correspondance
 NON Supervisé      entrées seules                -> trouver une structure
 SEMI-Supervisé     peu d'étiquettes + beaucoup de données brutes
-AUTO-Supervisé     l'étiquette vient des données elles-mêmes (mot masque,
+AUTO-Supervisé     l'étiquette vient des données elles-mêmes (mot masqué,
                    token suivant, paire image/texte)
 RENFORCEMENT       un agent agit, reçoit une récompense, ajuste sa politique
 ```
@@ -42,12 +42,12 @@ RENFORCEMENT       un agent agit, reçoit une récompense, ajuste sa politique
 | Renforcement | Récompense scalaire | Variable | Jeux, robotique, RLHF |
 
 Le régime auto-supervisé est celui qui a changé l'échelle du domaine : transformer
-« predire le mot suivant » en tâche d'entraînement permet d'utiliser des milliards de
+« prédire le mot suivant » en tâche d'entraînement permet d'utiliser des milliards de
 pages web sans aucune annotation humaine. Voir [chapitre 05](../05-llm/README.md).
 
 ## 3. Découper les données : la règle qu'on croit connaître
 
-Trois jeux séparés, chacun avec un role distinct :
+Trois jeux séparés, chacun avec un rôle distinct :
 
 - **Entraînement** : les paramètres sont ajustes dessus.
 - **Validation** : on y choisit les hyperparamètres et on y arrête l'entraînement.
@@ -72,7 +72,7 @@ scores sans jamais lever d'alerte. Formes classiques :
   même individu (le même patient dans train et test).
 - Normaliser (moyenne, ecart-type) avant de découper : les statistiques du test
   fuitent dans l'entraînement.
-- Utiliser une variable disponible seulement *après* l'événement qu'on veut predire.
+- Utiliser une variable disponible seulement *après* l'événement qu'on veut prédire.
 - Entraîner sur des documents dont la version du test est quasi identique (doublons).
 
 **Validation croisee** : on découpe en k blocs, on entraîne k fois en laissant un
@@ -155,7 +155,7 @@ minimale, pas celui où l'erreur d'entraînement est minimale.
 **Classification binaire** — matrice de confusion :
 
 ```
-                 predit positif   predit négatif
+                 prédit positif   prédit négatif
 réel positif     vrai positif     faux négatif
 réel négatif     faux positif     vrai négatif
 ```
@@ -170,7 +170,7 @@ réel négatif     faux positif     vrai négatif
 | PR-AUC | Aire sous la courbe précision/rappel | Meilleure que ROC-AUC en fort déséquilibre |
 
 **Régression** : RMSE (pénalise les grandes erreurs, même unité que la cible),
-MAE (plus robuste aux valeurs extremes), MAPE (en pourcentage, instable pres de zero).
+MAE (plus robuste aux valeurs extrêmes), MAPE (en pourcentage, instable près de zero).
 
 **Génération de texte** : perplexité (nombre moyen de choix equiprobables au token
 suivant, plus bas est mieux), exact match, ROUGE, et surtout des évaluations ciblées

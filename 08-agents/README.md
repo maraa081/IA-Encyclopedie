@@ -50,7 +50,7 @@ demande d'aide).
    d'outil                |                      |
         ^                 v                      v
         |            [Decision]            [Observation]
-        |          repondre / agir /       résultat de
+        |          répondre / agir /       résultat de
         +--------- se stopper <--------    l'action
 
   Conditions d'arrêt : objectif atteint, budget de tokens épuisé,
@@ -70,11 +70,11 @@ Le raisonnement peut être plus ou moins structuré :
   rédaction ou de code.
 
 ```
-ReAct : boucle pensee -> action -> observation
-  Pensee  : "Je dois connaître la météo a Paris pour adapter le conseil."
+ReAct : boucle pensée -> action -> observation
+  Pensée  : "Je dois connaître la météo a Paris pour adapter le conseil."
   Action  : get_weather(city="Paris")
   Obs.    : {"temp": 12, "pluie": true}
-  Pensee  : "Il pleut, je recommande un parapluie."
+  Pensée  : "Il pleut, je recommande un parapluie."
   Action  : respond(...)
 
 Plan-and-exécute :
@@ -98,7 +98,7 @@ On décrit chaque outil au modèle par un schéma JSON :
   "parameters": {
     "type": "object",
     "properties": {
-      "from": { "type": "string", "description": "Ville de depart (code IATA)" },
+      "from": { "type": "string", "description": "Ville de départ (code IATA)" },
       "to":   { "type": "string", "description": "Ville d'arrivee (code IATA)" },
       "date": { "type": "string", "description": "Date au format AAAA-MM-JJ" }
     },
@@ -159,7 +159,7 @@ d'ingénierie, pas une propriété du modèle.
 ```
 Mémoire d'agent :
 
-   [Contexte courant]        [Résumé compresse]        [Base vectorielle]
+   [Contexte courant]        [Résumé compressé]        [Base vectorielle]
    échanges récents          faits anciens             souvenirs récupérables
    (fidélité maximale)       (perte de détail)         (par similarité)
         |                         |                         |
@@ -185,7 +185,7 @@ compatible peut le consommer.
 ```
 [Client MCP]  <-- protocole standard -->  [Serveur MCP]
   IDE / agent                              base de données
-  heberge le LLM                           Git, fichiers
+  héberge le LLM                           Git, fichiers
         |                                    navigateur
         v
    le LLM voit les outils du serveur comme n'importe quel outil

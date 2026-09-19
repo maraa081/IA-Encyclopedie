@@ -14,14 +14,14 @@ la mauvaise réponse à un problème de contexte.
 ```
 Question : le modèle échoue sur ma tâche. Pourquoi ?
 
-A. Il ne connait pas mes informations (documents prives, actualite) ?
+A. Il ne connaît pas mes informations (documents prives, actualite) ?
    -> RAG (chapitre 07). Ne pas fine-tuner pour injecter des faits.
 
 B. Il ne respecte pas le format / le style / la tâche précise ?
    -> D'abord un meilleur prompt (few-shot, sortie structurée).
    -> Si insuffisant : fine-tuning d'instruction (LoRA, section 5).
 
-C. Il connait la tâche mais se trompe souvent sur un domaine technique pointu ?
+C. Il connaît la tâche mais se trompe souvent sur un domaine technique pointu ?
    -> Fine-tuning sur des données de domaine (paires vérifiées).
 
 D. Le coût ou la latence par requête est trop élevé ?

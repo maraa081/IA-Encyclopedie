@@ -208,7 +208,7 @@ Le critère determinant est presque toujours le compromis entre contrôle, coût
 Voici deux approches pour démarrer concrètement.
 
 ```python
-# Approche 1 : appel d'une API (exemple generique, adapte selon le fournisseur)
+# Approche 1 : appel d'une API (exemple générique, adapté selon le fournisseur)
 # Installation : pip install openai
 from openai import OpenAI
 
@@ -216,7 +216,7 @@ client = OpenAI(api_key="TA_CLE_API")
 response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-        {"role": "system", "content": "Tu reponds en français, de facon concise."},
+        {"role": "system", "content": "Tu réponds en français, de façon concise."},
         {"role": "user", "content": "Explique le fine-tuning en deux phrases."},
     ],
 )
@@ -224,7 +224,7 @@ print(response.choices[0].message.content)
 ```
 
 ```bash
-# Approche 2 : modele local via Ollama (aucune cle API, tout reste sur la machine)
+# Approche 2 : modèle local via Ollama (aucune cle API, tout reste sur la machine)
 # Installation : voir ollama.com
 ollama pull llama3.1:8b
 ollama run llama3.1:8b "Explique le fine-tuning en deux phrases."

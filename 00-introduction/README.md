@@ -59,7 +59,7 @@ là où le ML classique demande de les construire à la main (*feature engineeri
 Voir [chapitre 01](../01-fondamentaux/README.md) et [chapitre 03](../03-reseaux-de-neurones/README.md).
 
 **IA générative** : sous-ensemble du DL qui produit du contenu nouveau plutôt que de
-classer ou de predire. Elle modélise la distribution statistique des données
+classer ou de prédire. Elle modélise la distribution statistique des données
 d'entraînement et échantillonné dedans. Elle regroupe les grands modèles de langage
 (texte, code), les modèles de diffusion (image, vidéo) et les modèles audio.
 
@@ -113,7 +113,7 @@ en audio et en biologie.
 ## 4. Comment fonctionne un LLM, en vue gros grain
 
 Pas besoin de maths pour comprendre l'essentiel. Un grand modèle de langage fait
-une seule chose, en boucle : **predire le token suivant**.
+une seule chose, en boucle : **prédire le token suivant**.
 
 ```
 prompt : "La capitale de la France est"
@@ -192,7 +192,7 @@ performants, plus borels et moins « spectaculaires » que les LLM, parce qu'ils
   des règles, et le modèle ajuste ses paramètres pour minimiser une erreur.
 - L'histoire de l'IA alterne vagues d'enthousiasme et hivers : chaque vague a laissé
   des résultats réels, plus modestes que les annonces.
-- Un LLM ne fait qu'une chose : predire le token suivant, de façon autorégressive,
+- Un LLM ne fait qu'une chose : prédire le token suivant, de façon autorégressive,
   à partir de tout ce qui se trouve dans son contexte.
 - Cette mécanique explique à la fois la fluidité du texte produit et l'absence de
   garantie de vérité : les hallucinations sont structurelles, pas un bug.
@@ -220,7 +220,7 @@ performants, plus borels et moins « spectaculaires » que les LLM, parce qu'ils
 - [Chapitre 03 : réseaux de neurones](../03-reseaux-de-neurones/README.md)
 - [Chapitre 04 : transformers](../04-transformers/README.md)
 - [Chapitre 05 : grands modèles de langage](../05-llm/README.md)
-- [Chapitre 17 : frontières et debats](../17-au-dela/README.md)
+- [Chapitre 17 : frontières et débats](../17-au-dela/README.md)
 - Document fondateur : « Computing Machinery and Intelligence », Alan Turing, 1950.
 - Papier fondateur du transformer : « Attention Is All You Need », 2017.
 - Cours de référence en ligne : « Practical Deep Learning for Coders » (fast.ai) pour

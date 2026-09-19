@@ -198,7 +198,7 @@ Elle vaut 0 si les deux distributions sont identiques. Elle sert partout :
 
 - **VAE** : pénaliser l'ecart de l'espace latent à une gaussienne standard.
 - **Distillation** : le petit modèle apprend à coller aux probabilités du grand.
-- **RLHF** : pénaliser la dérive du modèle aligne par rapport au modèle de départ,
+- **RLHF** : pénaliser la dérive du modèle aligné par rapport au modèle de départ,
   pour éviter qu'il ne s'éloigné complètement.
 
 `H(p, q) = H(p) + KL(p || q)` : l'entropie croisee est l'entropie de la vérité plus
@@ -249,7 +249,7 @@ honnête.
 
 Et la phrase la plus utile du chapitre : **corrélation n'implique pas causalité**.
 Deux variables peuvent bouger ensemble à cause d'une troisième, ou par pure
-coincidence. Un modèle predit une association, jamais un mécanisme.
+coincidence. Un modèle prédit une association, jamais un mécanisme.
 
 ## 8. Pourquoi tout se calcule en log-espace
 

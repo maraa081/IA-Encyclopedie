@@ -75,12 +75,12 @@ Règles de fond :
 4. **Arbitrages explicites** : ne jamais dire "il faut faire X" sans dire quand et
    pourquoi, et ce qu'on perd en echange.
 5. **Pas de chiffre invente.** Si tu n'es pas sur d'une valeur précise, donne un
-   ordre de grandeur et presente-le comme tel ("de l'ordre de", "typiquement").
+   ordre de grandeur et présente-le comme tel ("de l'ordre de", "typiquement").
    Ne fabrique jamais de citation, de nom de papier ou d'URL précise : en cas de doute,
    cite l'institution ou le titre générique plutôt qu'une fausse référence.
 6. **Nommer les modèles et versions** quand c'est utile (GPT-4o, Claude Sonnet,
    Llama 3.1, Mistral Large, Qwen 2.5, DeepSeek-V3...), mais sans supposer que le
-   lecteur connait le paysage : le chapitre 05 et le chapitre 15 posent les bases.
+   lecteur connaît le paysage : le chapitre 05 et le chapitre 15 posent les bases.
 
 ## 5. Cartographie des chapitres (pour les liens croises)
 
@@ -103,7 +103,7 @@ Règles de fond :
 | `14-ethique-societe` | Biais, AI Act, emploi, environnement, alignement, droit d'auteur | 14 |
 | `15-ecosysteme` | Frameworks, libs, Hugging Face, fournisseurs API, modèles ouverts | 15 |
 | `16-pratique` | Tutoriels : premier modèle, RAG, serving, QLoRA, agent | 16 |
-| `17-au-dela` | Quantique, neuro-symbolique, modèles du monde, debat AGI, tendances | 17 |
+| `17-au-dela` | Quantique, neuro-symbolique, modèles du monde, débat AGI, tendances | 17 |
 | `GLOSSAIRE.md` | 300+ termes, A-Z | — |
 | `FAQ.md` | Questions fréquentes, réponses courtes | — |
 | `CHEATSHEET.md` | Formules, commandes, ordres de grandeur, arbres de decision | — |
@@ -120,5 +120,5 @@ chemins exacts.
 - [ ] Tous les liens internes pointent vers des fichiers qui existent vraiment
       (vérifie le nom du dossier et le nom de fichier).
 - [ ] Les termes techniques sont définis à la première occurrence.
-- [ ] Il y a au moins un tableau et au moins un bloc de code/schema.
+- [ ] Il y a au moins un tableau et au moins un bloc de code/schéma.
 - [ ] Aucune référence inventee.

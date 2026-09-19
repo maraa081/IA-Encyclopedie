@@ -139,7 +139,7 @@ Ce champ est encore jeune et ses résultats, bien que prometteurs, restent parti
 |---|---|---|
 | Superposition | Plus de concepts que de dimensions | Explique la difficulte d'interprétation |
 | Circuit | Groupe de neurones a fonction identifiable | Permet de suivre un calcul précis |
-| Sonde (probe) | Classifieur leger sur les activations | Teste la presence d'une information |
+| Sonde (probe) | Classifieur léger sur les activations | Teste la présence d'une information |
 
 ## 9. Tendances de fond
 
@@ -196,7 +196,7 @@ Protocole de vérification d'une affirmation (ex: "ce modèle surpasse l'humain"
 
 3. Comment le score est-il mesure ?
    -> métrique unique ? plusieurs ?
-   -> intervals de confiance donnes ?
+   -> intervalles de confiance donnés ?
 
 4. Sur quelles tâches ?
    -> une tâche étroite ou un ensemble varie ?

@@ -268,7 +268,7 @@ apporte plus d'amélioration que le passage à un meilleur modèle de générati
 # Pseudo-code : retrieval puis reranking
 candidats = index.search(embed(question), top_k=50)        # bi-encoder, rapide
 paires = [(question, c.texte) for c in candidats]
-scores = cross_encoder.predict(paires)                      # cross-encoder, precis
+scores = cross_encoder.predict(paires)                      # cross-encoder, précis
 top = [c for _, c in sorted(zip(scores, candidats), reverse=True)[:5]]
 contexte = "\n\n".join(c.texte for c in top)
 ```
