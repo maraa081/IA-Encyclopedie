@@ -149,7 +149,7 @@ Une analyse d'impact relative à la protection des données est obligatoire pour
 | :--- | :--- | :--- |
 | Minimisation | Filtrer les données inutiles avant entraînement | Ingénierie de pipeline, perte potentielle de signal |
 | Droit à l'explication | Fournir une justification compréhensible | Complexité d'API, explications approximatives |
-| Minimisation de la conservation | Suppression, redaction, ou ré-entraînement | Cycles de ré-entraînement coûteux |
+| Minimisation de la conservation | Suppression, rédaction, ou ré-entraînement | Cycles de ré-entraînement coûteux |
 | Sécurité | Chiffrement, contrôle d'accès, journalisation | Infra et processus |
 | Droit à l'effacement | Supprimer l'influence d'une donnée | Difficile en pratique (machine unlearning coûteux) |
 

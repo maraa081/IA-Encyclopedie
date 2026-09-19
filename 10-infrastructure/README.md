@@ -74,7 +74,7 @@ La mémoire vidéo (VRAM) est la ressource la plus précieuse. Un manque de VRAM
 
 ### Formule d'estimation de VRAM pour l'entraînement
 Pour un entraînement standard avec l'optimiseur Adam en précision mixte :
-$$\text{VRAM}_{\text{entrainement}} \approx \Phi \times (2_{\text{weights}} + 2_{\text{gradients}} + 12_{\text{optimizer}}) + \text{Activations}$$
+$$\text{VRAM}_{\text{entraînement}} \approx \Phi \times (2_{\text{weights}} + 2_{\text{gradients}} + 12_{\text{optimizer}}) + \text{Activations}$$
 Où $\Phi$ est le nombre de milliards de paramètres. Soit environ 16 à 18 GB par milliard de paramètres, hors activations.
 
 ### Techniques d'optimisation
@@ -88,9 +88,9 @@ Où $\Phi$ est le nombre de milliards de paramètres. Soit environ 16 à 18 GB p
 
 Le choix du format de données influe sur la stabilité de l'entraînement et la vitesse d'inférence.
 
-- **FP32 (Single Precision)** : 32 bits. Très précis, large plage. Trop lent et gourmand pour le calcul massif.
+- **FP32 (Single Précision)** : 32 bits. Très précis, large plage. Trop lent et gourmand pour le calcul massif.
 - **TF32 (Tensor Float 32)** : Format interne NVIDIA. Garde l'exposant du FP32 pour la stabilité, mais réduit la mantisse. Permet d'accélérer les calculs sans changer le code utilisateur.
-- **FP16 (Half Precision)** : 16 bits. Risque d'underflow/overflow (valeurs trop petites ou trop grandes qui deviennent zéro ou infini). Nécessite un "loss scaling".
+- **FP16 (Half Précision)** : 16 bits. Risque d'underflow/overflow (valeurs trop petites ou trop grandes qui deviennent zéro ou infini). Nécessite un "loss scaling".
 - **BF16 (Brain Float 16)** : Créé par Google. Possède le même exposant que le FP32 mais une mantisse courte. C'est le standard actuel car il est très stable et ne nécessite pas de gestion complexe de l'échelle.
 - **FP8 (E4M3 / E5M2)** : Nouveau standard supporté par les architectures Hopper (H100). Offre un débit de calcul doublé par rapport au FP16 avec une précision suffisante pour l'entraînement à grande échelle.
 - **INT8 / INT4** : Quantification pour l'inférence. Permet de diviser par 4 ou 8 l'usage mémoire.

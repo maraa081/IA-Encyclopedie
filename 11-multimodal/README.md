@@ -73,7 +73,7 @@ Cette architecture permet de réutiliser des modèles pré-entraînés puissants
 On peut ainsi n'entraîner au départ que le connecteur, ce qui réduit considérablement le coût de calcul.
 Lors de phases d'entraînement ultérieures (le fine-tuning supervisé ou le RLHF multimodal), les poids du LLM peuvent également être ajustés pour améliorer la précision sémantique globale et la cohérence de la réponse visuelle.
 
-Certains VLMs avancés comme Qwen2-VL introduisent des mécanismes de traitement multi-échelle (Native Dynamic Resolution).
+Certains VLMs avancés comme Qwen2-VL introduisent des mécanismes de traitement multi-échelle (Native Dynamic Résolution).
 Ils permettent de traiter des images de n'importe quelle taille sans distorsion.
 Pour ce faire, ils remplacent les embeddings positionnels de grille fixes par des embeddings positionnels 3D (prenant en compte la hauteur, la largeur et le temps pour les flux vidéo).
 
@@ -228,7 +228,7 @@ Au contraire, ses caractéristiques denses sont injectées directement dans l'es
 
 ## Ce qu'il faut retenir
 
-- La multimodalité unifie le traitement de types de données hétérogènes (texte, image, son, vidéo) au sein d'un même modèle ou d'un espace de représentation partagé.
+- La multimodalité unifié le traitement de types de données hétérogènes (texte, image, son, vidéo) au sein d'un même modèle ou d'un espace de représentation partagé.
 - Les modèles de vision-langage (VLM) modernes reposent sur un encodeur d'image (comme un ViT), un connecteur sémantique (MLP) et un grand modèle de langage (LLM) décodeur.
 - Pour être traitée par un Transformer, une image est découpée en patchs bidimensionnels convertis en vecteurs (tokens visuels), mimant la structure linéaire du langage.
 - Les signaux audio sont généralement convertis en spectrogrammes de Mel pour être traités comme des images, ou tokenisés directement sous forme de codes audio discrets.

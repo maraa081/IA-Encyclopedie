@@ -92,7 +92,7 @@ L'entraînement et l'inférence des modèles consomment beaucoup d'électricité
 
 ---
 
-## 5. RAG (Retrieval-Augmented Generation)
+## 5. RAG (Retrieval-Augmented Génération)
 
 ### Q5.1 : Quel est le principe fondamental du RAG ?
 Le RAG consiste à récupérer des documents pertinents dans une base de données externe en réponse à une requête, puis à insérer ces documents dans le prompt du LLM pour qu'il formule une réponse étayée et à jour. Voir [chapitre 07](07-rag/README.md).

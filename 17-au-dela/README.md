@@ -135,10 +135,10 @@ L'interprétabilité mécaniste cherche à comprendre ce qui se passe à l'inté
 Les techniques de visualisation d'attention et d'activation aident à l'intuition, mais l'attention n'est pas une explication complète.
 Ce champ est encore jeune et ses résultats, bien que prometteurs, restent partiels.
 
-| Notion | Definition courte | Interet |
+| Notion | Définition courte | Intérêt |
 |---|---|---|
-| Superposition | Plus de concepts que de dimensions | Explique la difficulte d'interpretation |
-| Circuit | Groupe de neurones a fonction identifiable | Permet de suivre un calcul precis |
+| Superposition | Plus de concepts que de dimensions | Explique la difficulte d'interprétation |
+| Circuit | Groupe de neurones a fonction identifiable | Permet de suivre un calcul précis |
 | Sonde (probe) | Classifieur leger sur les activations | Teste la presence d'une information |
 
 ## 9. Tendances de fond
@@ -162,7 +162,7 @@ Malgré les progrès, plusieurs obstacles de fond persistent.
 *   **Raisonnement** : les modèles excellent en induction statistique mais peinent sur la déduction rigoureuse et les chaînes longues.
 *   **Vérité** : les modèles génèrent des affirmations plausibles sans distinguer le vrai du faux, d'où les hallucinations.
 *   **Causalité** : distinguer corrélation et causation reste un problème ouvert, car les données d'entraînement sont observationnelles.
-*   **Apprentissage continu** : un modèle ne continue pas d'apprendre après son entraînement sans réentraînement ou fine-tuning couteux.
+*   **Apprentissage continu** : un modèle ne continue pas d'apprendre après son entraînement sans réentraînement ou fine-tuning coûteux.
 *   **Énergie** : l'entraînement et le service de modèles massifs consomment des quantités considérables de ressource (GPU, électricité, eau).
 
 Ces limites ne sont pas toutes près d'être levées, et certaines pourraient être structurelles.
@@ -184,33 +184,33 @@ La compétence durable n'est pas connaître chaque modèle du mois, mais compren
 Face à une annonce de performance, une méthode de vérification systématique.
 
 ```text
-Protocole de verification d'une affirmation (ex: "ce modele surpasse l'humain")
+Protocole de vérification d'une affirmation (ex: "ce modèle surpasse l'humain")
 
 1. Quelle est la source ?
    -> papier revu par les pairs, preprint, blog marketing, tweet ?
 
-2. Quelles sont les donnees de test ?
-   -> jeu public standardise ?
+2. Quelles sont les données de test ?
+   -> jeu public standardisé ?
    -> jeu prive non contamine ?
-   -> contient-il des exemples d'entrainement ?
+   -> contient-il des exemples d'entraînement ?
 
 3. Comment le score est-il mesure ?
-   -> metrique unique ? plusieurs ?
+   -> métrique unique ? plusieurs ?
    -> intervals de confiance donnes ?
 
-4. Sur quelles taches ?
-   -> une tache etroite ou un ensemble varie ?
-   -> les taches faciles dominent-elles la moyenne ?
+4. Sur quelles tâches ?
+   -> une tâche étroite ou un ensemble varie ?
+   -> les tâches faciles dominent-elles la moyenne ?
 
-5. Qui a evalue ?
-   -> l'auteur du modele ou un tiers independant ?
+5. Qui a évalué ?
+   -> l'auteur du modèle ou un tiers indépendant ?
 
-6. Les resultats sont-ils reproductibles ?
-   -> code et poids publies ?
+6. Les résultats sont-ils reproductibles ?
+   -> code et poids publiés ?
    -> quelqu'un d'autre a-t-il reproduit le score ?
 
-Regle : une affirmation forte exige une preuve forte.
-En cas de doute, considerer l'affirmation comme non etablie.
+Règle : une affirmation forte exige une preuve forte.
+En cas de doute, considerer l'affirmation comme non établie.
 ```
 
 Ce protocole évite de prendre des annonces pour des faits observés.

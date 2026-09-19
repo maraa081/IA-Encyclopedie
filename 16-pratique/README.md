@@ -142,7 +142,7 @@ python train_char.py
 
 **Prérequis** :
 - Python 3.8+
-- Bibliotheques : `torch`, `transformers`, `peft`, `datasets`
+- Bibliothèques : `torch`, `transformers`, `peft`, `datasets`
 - Un GPU avec au moins 8 Go de VRAM (ou utiliser CPU avec longueur de séquence réduite)
 
 **Code complet** :
@@ -222,17 +222,17 @@ python fine_tune_lora.py
 - Un taux de dropout trop élevé peut sous-ajuster l'adaptation.
 - Négliger de sauvegarder le tokenizer avec le modèle adapté.
 
-**Lien relatif** : Voir le chapitre sur le fine-tuning [[06-fine-tuning/README.md](../06-fine-tuning/README.md)] pour plus de détails sur LoRA et ses variantes.
+**Lien relatif** : Voir le chapitre sur le fine-tuning [06-fine-tuning/README.md](../06-fine-tuning/README.md) pour plus de détails sur LoRA et ses variantes.
 
 ---
 
 ## Tutoriel 3 : Construire un pipeline RAG simple avec FAISS
 
-**Objectif** : Mettre en place un système de Retrieval-Augmented Generation (RAG) pour répondre à des questions basé sur un corpus de documents.
+**Objectif** : Mettre en place un système de Retrieval-Augmented Génération (RAG) pour répondre à des questions basé sur un corpus de documents.
 
 **Prérequis** :
 - Python 3.8+
-- Bibliotheques : `sentence-transformers`, `faiss-cpu`, `transformers`
+- Bibliothèques : `sentence-transformers`, `faiss-cpu`, `transformers`
 - Un corpus de documents texte (exemple : articles Wikipédia)
 
 **Code complet** :
@@ -298,7 +298,7 @@ python rag_simple.py
 - Négliger de normaliser les embeddings si l'on utilise une métrique de produit scalaire.
 - Le modèle de génération peut ignorer le contexte s'il n'est pas bien conditionné.
 
-**Lien relatif** : Voir le chapitre sur le RAG [[07-rag/README.md](../07-rag/README.md)] pour des techniques avancées de chunking et de reranking.
+**Lien relatif** : Voir le chapitre sur le RAG [07-rag/README.md](../07-rag/README.md) pour des techniques avancées de chunking et de reranking.
 
 ---
 
@@ -353,7 +353,7 @@ python vllm_example.py
 - Ajuster la taille du bloc de tokens selon la VRAM disponible pour éviter les erreurs d'allocation de mémoire.
 - En mode serveur, vérifier que le port est libre et que le pare-feu autorise les connexions.
 
-**Lien relatif** : Voir le chapitre sur l'optimisation de l'inférence [[09-inference-optimisation/README.md](../09-inference-optimisation/README.md)] pour des détails sur vLLM et le KV cache.
+**Lien relatif** : Voir le chapitre sur l'optimisation de l'inférence [09-inference-optimisation/README.md](../09-inference-optimisation/README.md) pour des détails sur vLLM et le KV cache.
 
 ---
 
@@ -363,7 +363,7 @@ python vllm_example.py
 
 **Prérequis** :
 - Python 3.8+
-- Bibliotheques : `transformers`, `torch`
+- Bibliothèques : `transformers`, `torch`
 - Un modèle de langage instructif (exemple : `google/flan-t5-base`)
 
 **Code complet** :
@@ -429,7 +429,7 @@ python tool_agent.py
 - L'agent peut échouer à détecter l'intention d'utiliser un outil si la formulation est trop variée.
 - Le modèle de langage peut fournir des réponses incorrectes même lorsqu'un outil est disponible ; il faut parfois forcer l'utilisation de l'outil via le prompt.
 
-**Lien relatif** : Voir le chapitre sur les agents [[08-agents/README.md](../08-agents/README.md)] pour des architectures d'agents plus avancées avec mémoire et planification.
+**Lien relatif** : Voir le chapitre sur les agents [08-agents/README.md](../08-agents/README.md) pour des architectures d'agents plus avancées avec mémoire et planification.
 
 ---
 
@@ -439,7 +439,7 @@ python tool_agent.py
 
 **Prérequis** :
 - Python 3.8+
-- Bibliotheques : `torch`, `transformers`, `sentencepiece` (si nécessaire)
+- Bibliothèques : `torch`, `transformers`, `sentencepiece` (si nécessaire)
 - Outils : `llama.cpp` (cloner depuis GitHub et compiler)
 - Un modèle de langage compatible (exemple : `TheBloke/Llama-2-7B-chat-GGUF` ou convertir un modèle HuggingFace)
 
@@ -457,7 +457,7 @@ python tool_agent.py
 # Où --outtype peut être f16, q4_0, q4_1, q5_0, q5_1, q8_0, etc.
 
 # Étape 3 : Utiliser le modèle quantifié avec llama.cpp ou un serveur compatible
-# ./main -m /chemin/vers/modele.gguf -p "Bonjour, comment ça va ?" -n 128
+# ./main -m /chemin/vers/modèle.gguf -p "Bonjour, comment ça va ?" -n 128
 ```
 
 **Commandes** :
@@ -486,7 +486,7 @@ python convert_hf_to_gguf.py TinyLlama-1.1B-Chat-v1.0 --outtype q4_0
 - Certains modèles nécessitent une adaptation spécifique du script de conversion (vérifier la compatibilité avec `convert_hf_to_gguf.py`).
 - Lors de l'exécution avec `llama.cpp`, ajuster les paramètres de contexte (`-c`) et de lot (`-b`) selon les capacités du matériel.
 
-**Lien relatif** : Voir le chapitre sur l'écosystème [[15-ecosysteme/README.md](../15-ecosysteme/README.md)] pour une présentation de llama.cpp et d'autres cadres d'inférence légère.
+**Lien relatif** : Voir le chapitre sur l'écosystème [15-ecosysteme/README.md](../15-ecosysteme/README.md) pour une présentation de llama.cpp et d'autres cadres d'inférence légère.
 
 ---
 
@@ -496,7 +496,7 @@ python convert_hf_to_gguf.py TinyLlama-1.1B-Chat-v1.0 --outtype q4_0
 
 **Prérequis** :
 - Python 3.8+
-- Bibliotheques : `transformers`, `datasets`, `torch`
+- Bibliothèques : `transformers`, `datasets`, `torch`
 - Un dataset de textes étiquetés (exemple : SMS Spam Collection)
 
 **Code complet** :
@@ -593,7 +593,7 @@ python text_classification.py
 - Une longueur de séquence trop courte peut tronquer des informations importantes ; ajuster `max_length` selon la longueur moyenne des textes.
 - Négliger d'évaluer sur un ensemble de test totalement inconnu peut conduire à une surestimation des performances.
 
-**Lien relatif** : Voir le chapitre sur le pré-entraînement et le fine-tuning [[05-llm/README.md](../05-llm/README.md)] et [[06-fine-tuning/README.md](../06-fine-tuning/README.md)] pour le choix du modèle et les stratégies d'entraînement.
+**Lien relatif** : Voir le chapitre sur le pré-entraînement et le fine-tuning [05-llm/README.md](../05-llm/README.md) et [06-fine-tuning/README.md](../06-fine-tuning/README.md) pour le choix du modèle et les stratégies d'entraînement.
 
 ---
 
@@ -603,7 +603,7 @@ python text_classification.py
 
 **Prérequis** :
 - Python 3.8+
-- Bibliotheques : `torch`, `transformers`, `datasets`
+- Bibliothèques : `torch`, `transformers`, `datasets`
 - Un modèle de langage (exemple : `gpt2`) et un dataset de texte (exemple : Wikitext-2)
 - Un classificateur entraîné (exemple : celui du tutoriel 7)
 
@@ -706,7 +706,7 @@ python evaluate_model.py
 - Mesurer un serveur d'inférence signifie mesurer quatre nombres : temps jusqu'au
   premier token, temps par token, débit global en tokens par seconde, et taux d'erreur.
 
-## Erreurs fréquentes / idées recues
+## Erreurs fréquentes / idées reçues
 
 - « Je commence par installer LangChain » -> commence par les bibliothèques de base ;
   un RAG de vingt lignes se debugge infiniment plus facilement qu'un graphe d'abstractions.

@@ -17,21 +17,21 @@ Question : le modèle échoue sur ma tâche. Pourquoi ?
 A. Il ne connait pas mes informations (documents prives, actualite) ?
    -> RAG (chapitre 07). Ne pas fine-tuner pour injecter des faits.
 
-B. Il ne respecte pas le format / le style / la tache precise ?
-   -> D'abord un meilleur prompt (few-shot, sortie structuree).
+B. Il ne respecte pas le format / le style / la tâche précise ?
+   -> D'abord un meilleur prompt (few-shot, sortie structurée).
    -> Si insuffisant : fine-tuning d'instruction (LoRA, section 5).
 
-C. Il connait la tache mais se trompe souvent sur un domaine technique pointu ?
-   -> Fine-tuning sur des donnees de domaine (paires verifiees).
+C. Il connait la tâche mais se trompe souvent sur un domaine technique pointu ?
+   -> Fine-tuning sur des données de domaine (paires vérifiées).
 
-D. Le cout ou la latence par requete est trop eleve ?
-   -> Distillation (section 8) ou modele plus petit specialise.
+D. Le coût ou la latence par requête est trop élevé ?
+   -> Distillation (section 8) ou modèle plus petit spécialisé.
 
-E. Le modele frontier marche deja bien ?
-   -> Ne rien faire. Complexite ajoutee = maintenance, regressions, dette.
+E. Le modèle frontier marche déjà bien ?
+   -> Ne rien faire. Complexité ajoutee = maintenance, régressions, dette.
 
-F. Besoin de confidentialite stricte (donnees qui ne peuvent pas sortir) ?
-   -> Modele ouvert + LoRA en local (chapitres 10 et 15).
+F. Besoin de confidentialité stricte (données qui ne peuvent pas sortir) ?
+   -> Modèle ouvert + LoRA en local (chapitres 10 et 15).
 ```
 
 Ordre de coût croissant : prompt engineering < RAG < LoRA/QLoRA < full fine-tuning <
@@ -103,12 +103,12 @@ Delta_W, de même taille que W. LoRA pose :
 ```
 Delta_W = B x A
 
-A : matrice r x k   (initialisee aleatoirement, souvent gaussienne)
-B : matrice d x r   (initialisee a zero)
+A : matrice r x k   (initialisée aléatoirement, souvent gaussienne)
+B : matrice d x r   (initialisée à zéro)
 r : rang, typiquement 8 a 64
 
 Le poids effectif devient W + alpha/r * (B x A).
-alpha : facteur d'echelle du LoRA.
+alpha : facteur d'échelle du LoRA.
 ```
 
 Comme B commence à zéro, la mise à jour est nulle au départ : le modèle démarre
@@ -178,7 +178,7 @@ Valeurs typiques observées dans la communauté (à adapter, ce ne sont pas des 
 | Modules cibles | q,k,v,o + FFN | attention seule ou tout | Plus de modules = plus de capacité |
 
 ```python
-# Exemple conceptuel avec PEFT (pseudo-code, adapter a votre version)
+# Exemple conceptuel avec PEFT (pseudo-code, adapter à votre version)
 from peft import LoraConfig, get_peft_model
 
 config = LoraConfig(
@@ -267,7 +267,7 @@ Teacher (70B) : distribution P_t sur le vocabulaire
 Student (7B)  : distribution P_s
 
 Perte = alpha * CE(y, P_s) + (1 - alpha) * KL(P_t || P_s)
-CE : cross-entropy sur les vraies etiquettes
+CE : cross-entropy sur les vraies étiquettes
 KL : divergence entre distributions teacher et student
 alpha : ponderation (souvent 0.5)
 ```
@@ -372,7 +372,7 @@ comportement ([chapitre 07](../07-rag/README.md)).
 - DPO est plus simple et stable que le RLHF complet pour la plupart des cas.
 - Évaluer sur des données non vues et sur des tâches hors domaine est indispensable.
 
-## Erreurs frequentes / idees recues
+## Erreurs fréquentes / idées reçues
 - "Fine-tuner va ajouter des connaissances au modèle" -> faux : le RAG est plus adapté pour injecter des faits.
 - "Il faut des millions d'exemples" -> faux : quelques milliers bien choisis suffisent souvent pour un style ou un format.
 - "LoRA donne toujours un résultat moins bon que le full fine-tuning" -> souvent proche, parfois meilleur en généralité grâce au gel des poids.

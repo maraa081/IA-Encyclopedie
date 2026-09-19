@@ -249,4 +249,4 @@ model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3-8B", quantizati
 
 ---
 *Fin de l'aide-mémoire — À coller près de votre poste de travail.*
-*Lien connexe : Consultez le chapitre sur l'infrastructure [[10-infrastructure/README.md](10-infrastructure/README.md)] et l'inférence [[09-inference-optimisation/README.md](09-inference-optimisation/README.md)] pour approfondir ces notions.*
+*Lien connexe : Consultez le chapitre sur l'infrastructure [10-infrastructure/README.md](10-infrastructure/README.md) et l'inférence [09-inference-optimisation/README.md](09-inference-optimisation/README.md) pour approfondir ces notions.*

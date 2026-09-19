@@ -35,7 +35,7 @@ Comparatif :
 
 ## 2. Boucle perception / raisonnement / action
 
-Le coeur d'un agent est une boucle. À chaque tour : il perçoit l'état (message, résultat
+Le cœur d'un agent est une boucle. À chaque tour : il perçoit l'état (message, résultat
 d'outil), il raisonne sur la prochaine action, il agit (appelle un outil), puis observe
 le résultat, et recommence jusqu'à un critère d'arrêt (objectif atteint, budget épuisé,
 demande d'aide).
@@ -46,15 +46,15 @@ demande d'aide).
         v                                           |
   [Perception] --> [Raisonnement LLM] --> [Action / outil]
    message,          "quelle est la         appel API,
-   resultat          prochaine etape ?"     recherche, code
+   résultat          prochaine étape ?"     recherche, code
    d'outil                |                      |
         ^                 v                      v
         |            [Decision]            [Observation]
-        |          repondre / agir /       resultat de
+        |          repondre / agir /       résultat de
         +--------- se stopper <--------    l'action
 
-  Conditions d'arret : objectif atteint, budget de tokens epuise,
-  nombre maximal d'etapes atteint, ou demande de confirmation a l'humain.
+  Conditions d'arrêt : objectif atteint, budget de tokens épuisé,
+  nombre maximal d'étapes atteint, ou demande de confirmation a l'humain.
 ```
 
 Le raisonnement peut être plus ou moins structuré :
@@ -62,7 +62,7 @@ Le raisonnement peut être plus ou moins structuré :
 - **ReAct** (Reasoning and Acting) : le modèle alterne une pensée (reasoning) et une
   action (acting), en écrivant explicitement son raisonnement avant chaque appel d'outil.
   Simple et efficace, c'est le cycle de base.
-- **Plan-and-execute** : le modèle produit d'abord un plan complet en plusieurs étapes,
+- **Plan-and-exécute** : le modèle produit d'abord un plan complet en plusieurs étapes,
   puis exécute chaque étape. Moins de risque de dérive, mais le plan initial peut être
   mauvais et difficile à corriger en cours de route.
 - **Réflexion** (reflexion / self-critique) : l'agent critique sa propre production et
@@ -71,15 +71,15 @@ Le raisonnement peut être plus ou moins structuré :
 
 ```
 ReAct : boucle pensee -> action -> observation
-  Pensee  : "Je dois connaitre la meteo a Paris pour adapter le conseil."
+  Pensee  : "Je dois connaître la météo a Paris pour adapter le conseil."
   Action  : get_weather(city="Paris")
   Obs.    : {"temp": 12, "pluie": true}
   Pensee  : "Il pleut, je recommande un parapluie."
   Action  : respond(...)
 
-Plan-and-execute :
-  Plan    : 1) chercher les ventes 2024  2) comparer a 2023  3) rediger le resume
-  Execute : etape 1 -> etape 2 -> etape 3
+Plan-and-exécute :
+  Plan    : 1) chercher les ventes 2024  2) comparer a 2023  3) rédiger le résumé
+  Exécute : étape 1 -> étape 2 -> étape 3
 ```
 
 ## 3. Tool calling et function calling
@@ -94,7 +94,7 @@ On décrit chaque outil au modèle par un schéma JSON :
 ```json
 {
   "name": "search_flights",
-  "description": "Recherche des vols entre deux villes a une date donnee",
+  "description": "Recherche des vols entre deux villes à une date donnée",
   "parameters": {
     "type": "object",
     "properties": {
@@ -130,11 +130,11 @@ while True:
     messages.append(reponse)
     if reponse.finish_reason == "tool_calls":
         for appel in reponse.tool_calls:
-            args = valider(appel.arguments)          # verifier avant d'executer
+            args = valider(appel.arguments)          # vérifier avant d'exécuter
             resultat = executer_outil(appel.name, args)
             messages.append({"role": "tool", "content": resultat})
     else:
-        break   # le modele a produit une reponse finale
+        break   # le modèle a produit une réponse finale
 print(reponse.content)
 ```
 
@@ -157,14 +157,14 @@ d'ingénierie, pas une propriété du modèle.
   C'est le mécanisme utilisé par les agents longue durée.
 
 ```
-Memoire d'agent :
+Mémoire d'agent :
 
-   [Contexte courant]        [Resume compresse]        [Base vectorielle]
-   echanges recents          faits anciens             souvenirs recuperables
-   (fidelite maximale)       (perte de detail)         (par similarite)
+   [Contexte courant]        [Résumé compresse]        [Base vectorielle]
+   échanges récents          faits anciens             souvenirs récupérables
+   (fidélité maximale)       (perte de détail)         (par similarité)
         |                         |                         |
         +-- max ~50% du -------- + -- compaction ---------- + -- retrieval a
-            contexte               periodique                la demande
+            contexte               périodique                la demande
 ```
 
 ## 5. MCP (Model Context Protocol)
@@ -184,7 +184,7 @@ compatible peut le consommer.
 
 ```
 [Client MCP]  <-- protocole standard -->  [Serveur MCP]
-  IDE / agent                              base de donnees
+  IDE / agent                              base de données
   heberge le LLM                           Git, fichiers
         |                                    navigateur
         v
@@ -260,10 +260,10 @@ qui contrôle.
 
 ```
 Orchestrateur
-   |--- sous-tache A --> agent chercheur   --+
-   |--- sous-tache B --> agent redacteur    --+--> synthese --> agent critique
-   |--- sous-tache C --> agent verificateur --+
-        (cout total = somme de tous les appels, plus la synthese)
+   |--- sous-tâche A --> agent chercheur   --+
+   |--- sous-tâche B --> agent rédacteur    --+--> synthèse --> agent critique
+   |--- sous-tâche C --> agent vérificateur --+
+        (coût total = somme de tous les appels, plus la synthèse)
 ```
 
 ## 9. Fiabilité et garde-fous
@@ -287,20 +287,20 @@ Un agent autonome échoue de façons nouvelles. Les problèmes les plus fréquen
   d'étapes ; c'est le garde-fou qui protège la facture.
 
 ```
-Garde-fous d'execution (pseudo-configuration)
+Garde-fous d'exécution (pseudo-configuration)
 
   max_steps            : 25
-  max_tokens_par_tache : 200 000
+  max_tokens_par_tâche : 200 000
   outils_autorises     : [recherche, lecture_fichier]      # pas d'ecriture
   actions_sensibles    : [envoi_email, paiement, suppression]  -> confirmation humaine
-  sandbox              : docker, reseau_desactive, pas de secrets
+  sandbox              : docker, réseau_désactive, pas de secrets
 ```
 
 ## 10. Évaluation des agents
 
 Évaluer un agent ne se réduit pas à vérifier la réponse finale : c'est la qualité de la
 trajectoire qui compte (a-t-il utilisé les bons outils, dans le bon ordre, sans détours
-coûteux ?). On parle d'évaluation par trajectoire (`trajectory evaluation`).
+coûteux ?). On parle d'évaluation par trajectoire (`trajectory évaluation`).
 
 | Benchmark | Domaine | Ce qu'il mesure |
 |---|---|---|
@@ -340,10 +340,10 @@ Règles minimales :
 - La boucle perception / raisonnement / action se répète jusqu'à un critère d'arrêt.
 - Le tool calling fait émettre au modèle une intention structurée en JSON que le code
   exécute ; le modèle n'exécute jamais rien lui-même.
-- ReAct alterne pensée et action ; plan-and-execute établit un plan avant d'agir.
+- ReAct alterne pensée et action ; plan-and-exécute établit un plan avant d'agir.
 - La mémoire d'un agent est un problème d'ingénierie : contexte, résumé, compaction,
   base vectorielle.
-- MCP standardise les connecteurs d'outils et découple le modèle des intégrations.
+- MCP standardisé les connecteurs d'outils et découple le modèle des intégrations.
 - Les agents de code sont l'application la plus mature, mais exigent sandbox et révision.
 - Le multi-agents améliore certaines tâches au prix d'un coût qui croît vite.
 - La fiabilité passe par des limites d'étapes, un budget de tokens, une sandbox, des
@@ -377,4 +377,4 @@ Règles minimales :
 - Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models" (2022,
   arXiv:2210.03629).
 - Documentation LangGraph et OpenAI Agents SDK : boucles d'agents et tool calling.
-- Benchmark SWE-bench : evaluation des agents de code sur des issues reelles.
+- Benchmark SWE-bench : évaluation des agents de code sur des issues réelles.

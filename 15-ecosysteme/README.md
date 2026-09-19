@@ -12,7 +12,7 @@ On peut les classer en quatre grandes catégories :
     Ils fournissent l'infrastructure matérielle (GPU, TPU) et les services cloud nécessaires à l'entraînement et au service de modèles massifs.
 *   **Les laboratoires indépendants** :
     OpenAI, Anthropic, Mistral AI, Cohere, xAI.
-    Leur coeur de métier est la recherche et la création de modèles frontières, souvent propriétaires, accessibles via API.
+    Leur cœur de métier est la recherche et la création de modèles frontières, souvent propriétaires, accessibles via API.
 *   **Les champions de l'open source** :
     Meta (Llama), Mistral AI (Mistral, Mixtral), Alibaba (Qwen), DeepSeek, Google (Gemma), Microsoft (Phi), Allen Institute (OLMo).
     Ils publient les poids de leurs modèles, ce qui permet à la communauté de les inspecter, de les affiner et de les déployer localement.
@@ -28,7 +28,7 @@ Les frameworks sont les bibliothèques logicielles qui abstraient la complexité
 
 *   **PyTorch** (Meta) :
     C'est aujourd'hui le standard de fait dans la recherche et de plus en plus dans l'industrie.
-    Son approche dynamique (define-by-run) construit le graphe de calcul à la volée, ce qui facilite le débogage étape par étape.
+    Son approche dynamique (define-by-run) construit le graphe de calcul à la volée, ce qui facilité le débogage étape par étape.
     L'écosystème est immense et presque tous les modèles publiés sur Hugging Face fournissent un code PyTorch.
 *   **JAX** (Google) :
     Orienté vers le calcul haute performance, il compile les opérations vers le GPU ou le TPU via XLA.
@@ -97,7 +97,7 @@ Pour beaucoup d'applications, la voie la plus rapide est d'appeler un modèle pa
 
 | Fournisseur | Modèles phares | Positionnement |
 |---|---|---|
-| OpenAI | GPT-4o, GPT-4o mini, o-series | Référence grand public, forte notoriété |
+| OpenAI | GPT-4o, GPT-4o mini, o-séries | Référence grand public, forte notoriété |
 | Anthropic | Claude 3.5 Sonnet, Claude 3 Opus | Contexte long, raisonnement, sûreté |
 | Google | Gemini 1.5 Pro, Gemini Flash | Intégration Workspace, très long contexte |
 | Mistral AI | Mistral Large, Small, Codestral | Acteur européen, poids ouverts et API |
@@ -120,7 +120,7 @@ Les modèles ouverts sont publiés avec leurs poids, ce qui permet le déploieme
 | Llama 3.1 / 3.3 | Meta | 8B, 70B, 405B | Licence communautaire Meta |
 | Mistral / Mixtral | Mistral AI | 7B, 8x7B, 8x22B | Apache 2.0 (selon version) |
 | Qwen 2.5 | Alibaba | 0.5B a 72B | Apache 2.0 (selon version) |
-| DeepSeek-V3 / R1 | DeepSeek | ~671B (MoE) | Licence ouverte specifique |
+| DeepSeek-V3 / R1 | DeepSeek | ~671B (MoE) | Licence ouverte spécifique |
 | Gemma 2 | Google | 2B, 9B, 27B | Licence Gemma |
 | Phi-3 / Phi-4 | Microsoft | 3.8B, 14B | Licence MIT |
 | OLMo | Allen Institute | 7B, 13B | Apache 2.0, données ouvertes |
@@ -180,28 +180,28 @@ En pratique, un développeur commence souvent par Ollama ou LM Studio pour proto
 Voici un arbre de décision simple pour orienter le choix.
 
 ```
-Besoin de confidentialite forte (donnees sensibles) ?
-  oui -> deploiement local d'un modele ouvert (Llama, Qwen, Mistral)
+Besoin de confidentialité forte (données sensibles) ?
+  oui -> déploiement local d'un modèle ouvert (Llama, Qwen, Mistral)
   non -> continuer
 
-Besoin de la meilleure qualite possible sur des taches variees ?
-  oui -> API d'un modele frontiere ferme (GPT-4o, Claude, Gemini)
+Besoin de la meilleure qualité possible sur des tâches variees ?
+  oui -> API d'un modèle frontière ferme (GPT-4o, Claude, Gemini)
   non -> continuer
 
-Contrainte de cout serree et gros volume ?
-  oui -> modele ouvert heberge (Together, Fireworks) ou API a bas cout (DeepSeek)
+Contrainte de coût serrée et gros volume ?
+  oui -> modèle ouvert héberge (Together, Fireworks) ou API à bas coût (DeepSeek)
   non -> continuer
 
-Besoin d'une tache specialisee (code, embeddings, vision) ?
-  oui -> choisir un modele dedie a cette tache
-  non -> utiliser un modele generaliste de milieu de gamme
+Besoin d'une tâche spécialisée (code, embeddings, vision) ?
+  oui -> choisir un modèle dédié a cette tâche
+  non -> utiliser un modèle generaliste de milieu de gamme
 
-Contrainte materielle locale (VRAM limitee) ?
-  oui -> modele quantifie (4 bits) de 7 a 14B, via Ollama
-  non -> viser un modele 30B+ ou une API
+Contrainte matérielle locale (VRAM limitée) ?
+  oui -> modèle quantifie (4 bits) de 7 a 14B, via Ollama
+  non -> viser un modèle 30B+ ou une API
 ```
 
-Le critere determinant est presque toujours le compromis entre controle, cout et qualite.
+Le critère determinant est presque toujours le compromis entre contrôle, coût et qualité.
 
 ## 11. Cas pratique : premier appel API et premier modèle local
 
@@ -216,7 +216,7 @@ client = OpenAI(api_key="TA_CLE_API")
 response = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-        {"role": "system", "content": "Tu reponds en francais, de facon concise."},
+        {"role": "system", "content": "Tu reponds en français, de facon concise."},
         {"role": "user", "content": "Explique le fine-tuning en deux phrases."},
     ],
 )

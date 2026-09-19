@@ -1,4 +1,4 @@
-# RAG (Retrieval-Augmented Generation)
+# RAG (Retrieval-Augmented Génération)
 
 > Le RAG (génération augmentée par récupération) combine un moteur de recherche documentaire et un grand modèle de langage pour ancrer les réponses dans des sources externes vérifiables. Il permet d'utiliser des connaissances à jour ou privées, de citer ses sources et d'éviter de ré-entraîner le modèle à chaque changement de données.
 
@@ -12,7 +12,7 @@ connaît pas tes documents internes, et il peut inventer des faits avec assuranc
 réels et en les fournissant au modèle comme contexte au moment de la question.
 
 L'analogie classique : c'est un examen à livre ouvert. Le modèle n'a pas besoin de
-mémoriser par coeur les 400 pages d'un manuel, il a juste besoin de savoir lire la bonne
+mémoriser par cœur les 400 pages d'un manuel, il a juste besoin de savoir lire la bonne
 page qu'on lui tend et d'en tirer la réponse. Le travail difficile consiste à trouver la
 bonne page parmi des millions.
 
@@ -37,24 +37,24 @@ Le pipeline RAG se découpe en deux phases : une phase hors ligne d'ingestion (o
 l'index) et une phase en ligne de requête (on répond à l'utilisateur).
 
 ```
-PHASE HORS LIGNE (ingestion, faite une fois puis mise a jour)
+PHASE HORS LIGNE (ingestion, faite une fois puis mise à jour)
 
-  [Documents]      [Decoupage]     [Embeddings]     [Base vectorielle]
-   PDF, HTML  -->   chunking  -->   encodeur   -->   index + metadonnees
+  [Documents]      [Découpage]     [Embeddings]     [Base vectorielle]
+   PDF, HTML  -->   chunking  -->   encodeur   -->   index + métadonnées
    Markdown         500 tok         bi-encoder       (HNSW, filtres)
      |                 |               |                   |
      v                 v               v                   v
    nettoyage      chevauchement    vecteurs 1024-d      persistance
 
-PHASE EN LIGNE (par requete, doit tenir en quelques centaines de ms)
+PHASE EN LIGNE (par requête, doit tenir en quelques centaines de ms)
 
-  [Question]    [Transformation]   [Retrieval]      [Reranking]     [Generation]
+  [Question]    [Transformation]   [Retrieval]      [Reranking]     [Génération]
    utilisateur     HyDE,            top-k 50         cross-encoder    LLM lit le
      |            multi-query        dens+sparse       garde top 5     contexte
      v                 |                 |                 |             |
    5 a 20 mots         v                 v                 v             v
-                  plusieurs         scores de         scores de      reponse
-                  formulations      similarite        pertinence     + citations
+                  plusieurs         scores de         scores de      réponse
+                  formulations      similarité        pertinence     + citations
 ```
 
 Chaque étage a un coût et un bénéfice. Le retrieval (récupération) ramène un large
@@ -103,7 +103,7 @@ Stratégies de découpage, de la plus simple à la plus fine :
 ```python
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# Decoupage recursif : essaie de couper sur les paragraphes,
+# Découpage recursif : essaie de couper sur les paragraphes,
 # puis les phrases, puis les mots, pour preserver la structure.
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,        # en caracteres (approximation des tokens)
@@ -328,9 +328,9 @@ de techniques sans mesure est un piège courant.
 Une fois les meilleurs chunks sélectionnés, on assemble le prompt final :
 
 ```
-[instruction systeme]
-Tu reponds uniquement a partir des documents fournis.
-Si la reponse n'y figure pas, dis-le explicitement.
+[instruction système]
+Tu réponds uniquement à partir des documents fournis.
+Si la réponse n'y figure pas, dis-le explicitement.
 
 [contexte]
 <document source="rapport-2025.pdf" page="12">
@@ -341,9 +341,9 @@ Si la reponse n'y figure pas, dis-le explicitement.
 </document>
 
 [question]
-Quelle est la procedure de validation ?
+Quelle est la procédure de validation ?
 
-Reponse en citant les sources entre crochets.
+Réponse en citant les sources entre crochets.
 ```
 
 Le phénomène du **lost in the middle** (perte au milieu) : les LLM exploitent mieux
@@ -364,7 +364,7 @@ la qualité du retrieval et la qualité de la réponse générée.
 | Métrique | Niveau | Question posée |
 |---|---|---|
 | Context recall | retrieval | les documents utiles ont-ils été retrouvés ? |
-| Context precision | retrieval | les documents retrouvés sont-ils tous utiles ? |
+| Context précision | retrieval | les documents retrouvés sont-ils tous utiles ? |
 | Faithfulness | génération | la réponse est-elle fondée sur le contexte ? |
 | Answer relevance | génération | la réponse répond-elle à la question ? |
 
@@ -448,7 +448,7 @@ qui doit changer : le comportement (fine-tuning) ou les faits (RAG).
 - [Chapitre 06 - Fine-Tuning](../06-fine-tuning/README.md) : quand adapter les poids.
 - [Chapitre 08 - Agents](../08-agents/README.md) : le RAG comme outil d'agent.
 - [Chapitre 13 - Sécurité](../13-securite/README.md) : injection indirecte via documents.
-- Documentation officielle : Lewis et al., "Retrieval-Augmented Generation for
+- Documentation officielle : Lewis et al., "Retrieval-Augmented Génération for
   Knowledge-Intensive NLP Tasks" (Facebook AI Research, 2020, arXiv:2005.11401).
 - Documentation RAGAS : framework d'évaluation RAG (docs.ragas.io).
 - Documentation Qdrant et FAISS : guides d'indexation vectorielle.

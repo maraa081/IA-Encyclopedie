@@ -455,7 +455,7 @@ Dans l'encyclopédie :
 Ressources externes réelles :
 - "Deep Learning", Ian Goodfellow, Yoshua Bengio, Aaron Courville (MIT Press, 2016).
 - Cours CS231n, Stanford, sur les réseaux convolutifs pour la vision.
-- Article "Learning representations by back-propagating errors", Rumelhart, Hinton,
+- Article "Learning représentations by back-propagating errors", Rumelhart, Hinton,
   Williams, Nature, 1986.
 - Article "Deep Residual Learning for Image Recognition", He et al., 2015 (ResNet).
 - Article "Adam: A Method for Stochastic Optimization", Kingma et Ba, 2014.

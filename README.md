@@ -50,7 +50,7 @@ débit en tokens/s, coût en euros ou dollars par million de tokens).
 | 04 | [Transformers](04-transformers/README.md) | Attention, tokenisation, embeddings, positionnel, variantes modernes |
 | 05 | [Grands modèles de langage (LLM)](05-llm/README.md) | Pré-entraînement, scaling laws, RLHF/DPO, raisonnement, évaluation |
 | 06 | [Fine-tuning et adaptation](06-fine-tuning/README.md) | LoRA, QLoRA, PEFT, distillation, datasets, quand fine-tuner |
-| 07 | [RAG : Retrieval-Augmented Generation](07-rag/README.md) | Pipeline, chunking, embeddings, bases vectorielles, reranking, éval |
+| 07 | [RAG : Retrieval-Augmented Génération](07-rag/README.md) | Pipeline, chunking, embeddings, bases vectorielles, reranking, éval |
 | 08 | [Agents IA](08-agents/README.md) | Tool calling, MCP, mémoire, planification, multi-agents, fiabilité |
 | 09 | [Inférence : optimiser et servir](09-inference-optimisation/README.md) | Prefill/decode, KV cache, vLLM, quantization, speculative decoding |
 | 10 | [Infrastructure : GPU, VRAM, cloud](10-infrastructure/README.md) | Pourquoi des GPU, CUDA, précision numérique, parallélisme, énergie, coûts |

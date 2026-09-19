@@ -168,7 +168,7 @@ La bibliothèque `bitsandbytes` permet de charger des modèles Hugging Face dire
 
 ---
 
-## 7. Accélération de la génération : Spéculative Decoding et alternatives
+## 7. Accélération de la génération : Speculative Decoding et alternatives
 
 La génération séquentielle classique impose d'exécuter l'intégralité du grand modèle pour chaque token produit. Plusieurs techniques visent à contourner ce goulot d'étranglement.
 

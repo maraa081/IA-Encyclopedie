@@ -100,13 +100,13 @@
 
 **BatchNorm (normalisation par batch)** : Normalisation des activations sur la dimension du batch, très efficace pour les CNN. Mal adaptée aux séquences de longueur variable, où LayerNorm lui est préférée. [ch. 03](03-reseaux-de-neurones/README.md)
 
-**Bayes (théorème de)** : Relation entre probabilité a priori, vraisemblance et probabilité a posteriori : P(A|B) = P(B|A) P(A) / P(B). Fondement des classifieurs bayésiens et du raisonnement probabiliste. [ch. 02](02-mathematiques/README.md)
+**Bayes (théorème de)** : Relation entre probabilité à priori, vraisemblance et probabilité à posteriori : P(A|B) = P(B|A) P(A) / P(B). Fondement des classifieurs bayésiens et du raisonnement probabiliste. [ch. 02](02-mathematiques/README.md)
 
 **Beam search** : Décodage qui maintient plusieurs hypothèses en parallèle et garde les k meilleures à chaque étape. Améliore la cohérence globale, mais plus coûteux et moins varié que l'échantillonnage. [ch. 05](05-llm/README.md)
 
 **Benchmark** : Jeu de tests standardisé servant à comparer des modèles (MMLU, GSM8K, HumanEval...). Un modèle peut être bon au benchmark et décevant en usage réel. [ch. 05](05-llm/README.md)
 
-**BERT (Bidirectional Encoder Representations from Transformers)** : Famille de modèles encodeurs, entraînés à prédire des mots masqués, utilisés pour la compréhension et l'embedding plutôt que pour la génération. [ch. 04](04-transformers/README.md)
+**BERT (Bidirectional Encoder Représentations from Transformers)** : Famille de modèles encodeurs, entraînés à prédire des mots masqués, utilisés pour la compréhension et l'embedding plutôt que pour la génération. [ch. 04](04-transformers/README.md)
 
 **BF16 (bfloat16)** : Format flottant sur 16 bits, avec la même plage d'exposant que le FP32 mais une précision réduite. Préféré au FP16 pour l'entraînement car il n'a pas besoin de mise à l'échelle des gradients. [ch. 10](10-infrastructure/README.md)
 
@@ -170,7 +170,7 @@
 
 **Contexte long (long context)** : Modèles capables de traiter de très grandes entrées (de 128 000 à plus d'un million de tokens). Attention : capacité annoncée n'égale pas récupération fiable au milieu du contexte. [ch. 04](04-transformers/README.md)
 
-**Continual pretraining** : Poursuite du pré-entraînement sur un corpus spécialisé (code, langue, domaine médical) pour ajuster un modèle de base. [ch. 06](06-fine-tuning/README.md)
+**Continual pré-entraînement** : Poursuite du pré-entraînement sur un corpus spécialisé (code, langue, domaine médical) pour ajuster un modèle de base. [ch. 06](06-fine-tuning/README.md)
 
 **Contrastif (apprentissage)** : Objectif qui rapproche les représentations des paires associées et éloigne les paires non associées. Base de CLIP et de la plupart des modèles d'embedding. [ch. 11](11-multimodal/README.md)
 
@@ -236,7 +236,7 @@
 
 ## E
 
-**Echantillonnage (sampling)** : Tirage aléatoire du prochain token selon la distribution de probabilités, éventuellement filtrée (top-k, top-p). Produit des réponses variées, là où le décodage glouton est déterministe. [ch. 05](05-llm/README.md)
+**Échantillonnage (sampling)** : Tirage aléatoire du prochain token selon la distribution de probabilités, éventuellement filtrée (top-k, top-p). Produit des réponses variées, là où le décodage glouton est déterministe. [ch. 05](05-llm/README.md)
 
 **Edge AI (IA embarquée)** : Exécution de modèles directement sur l'appareil (téléphone, caméra, voiture) plutôt que sur un serveur. Avantages : latence, vie privée, mode hors ligne. Contrainte : mémoire et énergie. [ch. 10](10-infrastructure/README.md)
 
@@ -258,7 +258,7 @@
 
 **Erreur (métrique)** : Ecart moyen entre prédiction et valeur attendue. En régression : RMSE, MAE, MAPE. En classification : taux d'erreur, log-loss. [ch. 01](01-fondamentaux/README.md)
 
-**Etiquetage (labeling)** : Attribution de la réponse attendue. Les étiquettes peuvent être exactes (supervision classique), préférentielles (RLHF) ou faibles (weak supervision). [ch. 12](12-donnees/README.md)
+**Étiquetage (labeling)** : Attribution de la réponse attendue. Les étiquettes peuvent être exactes (supervision classique), préférentielles (RLHF) ou faibles (weak supervision). [ch. 12](12-donnees/README.md)
 
 **Eval (évaluation)** : Ensemble des mesures qui déterminent si un système fonctionne : métriques automatiques, tests ciblés, revue humaine, tests adversariaux. Indispensable et presque toujours sous-dimensionnée. [ch. 05](05-llm/README.md)
 
@@ -290,7 +290,7 @@
 
 **FlashAttention** : Implémentation d'attention économe en mémoire, qui évite de matérialiser la grande matrice d'attention et limite les transferts mémoire. Gain typique : plusieurs fois moins de VRAM et un calcul plus rapide. [ch. 04](04-transformers/README.md)
 
-**FLOPs (Floating Point Operations)** : Nombre d'opérations en virgule flottante. Sert à estimer le coût d'un entraînement (de l'ordre de 6 x paramètres x tokens pour un entraînement complet) et d'une inférence (environ 2 x paramètres par token). [ch. 10](10-infrastructure/README.md)
+**FLOPs (Floating Point Opérations)** : Nombre d'opérations en virgule flottante. Sert à estimer le coût d'un entraînement (de l'ordre de 6 x paramètres x tokens pour un entraînement complet) et d'une inférence (environ 2 x paramètres par token). [ch. 10](10-infrastructure/README.md)
 
 **Fondation (modèle de)** : Modèle de très grande taille entraîné sur des données très générales, destiné à être adapté à de nombreuses tâches. [ch. 05](05-llm/README.md)
 
@@ -320,7 +320,7 @@
 
 **GGUF** : Format de fichier de modèles quantifiés, utilisé par llama.cpp et l'écosystème local (Ollama, LM Studio). Un seul fichier, portable CPU/GPU. [ch. 09](09-inference-optimisation/README.md)
 
-**GNN (Graph Neural Network / réseau de neurones sur graphes)** : Réseau qui propage de l'information le long des arêtes d'un graphe (molecules, réseaux sociaux, dépendances). [ch. 03](03-reseaux-de-neurones/README.md)
+**GNN (Graph Neural Network / réseau de neurones sur graphes)** : Réseau qui propage de l'information le long des arêtes d'un graphe (molécules, réseaux sociaux, dépendances). [ch. 03](03-reseaux-de-neurones/README.md)
 
 **GPT** : Famille de modèles décodeurs autorégressifs de OpenAI. Par extension, désigne souvent tout LLM décodeur. [ch. 04](04-transformers/README.md)
 
@@ -370,7 +370,7 @@
 
 **InfiniBand** : Réseau très haut débit et faible latence utilisé pour interconnecter des milliers de GPU dans un cluster d'entraînement. [ch. 10](10-infrastructure/README.md)
 
-**Inférence (inference)** : Utilisation d'un modèle entraîné pour produire une prédiction ou une génération. Deux phases : prefill (lecture du prompt) puis decode (génération token par token). [ch. 09](09-inference-optimisation/README.md)
+**Inférence (inférence)** : Utilisation d'un modèle entraîné pour produire une prédiction ou une génération. Deux phases : prefill (lecture du prompt) puis decode (génération token par token). [ch. 09](09-inference-optimisation/README.md)
 
 **Index (vectoriel)** : Structure de données qui accélère la recherche des vecteurs les plus proches (HNSW, IVF). Son choix se fait sur le compromis entre rappel, latence et mémoire. [ch. 07](07-rag/README.md)
 
@@ -414,7 +414,7 @@
 
 **L1 / L2 (régularisation)** : Pénalités ajoutées à la fonction de coût : L1 pousse des poids exactement à zéro (sélection de variables), L2 les rend petits (lissage). [ch. 01](01-fondamentaux/README.md)
 
-**Label (étiquette)** : Réponse attendue associée à une entrée. Voir « Etiquetage ». [ch. 01](01-fondamentaux/README.md)
+**Label (étiquette)** : Réponse attendue associée à une entrée. Voir « Étiquetage ». [ch. 01](01-fondamentaux/README.md)
 
 **LangChain / LangGraph** : Frameworks Python pour enchaîner prompts, outils et états. LangGraph modélise explicitement une boucle d'agent sous forme de graphe. [ch. 08](08-agents/README.md)
 
@@ -456,7 +456,7 @@
 
 **Matrice de confusion** : Tableau croisant prédictions et vérités pour chaque classe (vrais positifs, faux positifs, faux négatifs, vrais négatifs). Source de toutes les métriques de classification. [ch. 01](01-fondamentaux/README.md)
 
-**MCP (Model Context Protocol)** : Protocole ouvert qui standardise la façon dont un modèle découvre et appelle des outils et des sources de données, via des serveurs dédiés. [ch. 08](08-agents/README.md)
+**MCP (Model Context Protocol)** : Protocole ouvert qui standardisé la façon dont un modèle découvre et appelle des outils et des sources de données, via des serveurs dédiés. [ch. 08](08-agents/README.md)
 
 **Mémoire (d'un agent)** : Stockage d'information au-delà du contexte : résumé de conversation, notes persistantes, base vectorielle de faits. Sans elle, l'agent repart de zéro à chaque tour. [ch. 08](08-agents/README.md)
 
@@ -520,7 +520,7 @@
 
 ## P
 
-**PagedAttention** : Technique qui gère le KV cache par pages, comme une mémoire virtuelle, réduisant la fragmentation et augmentant fortement le débit de service. Coeur de vLLM. [ch. 09](09-inference-optimisation/README.md)
+**PagedAttention** : Technique qui gère le KV cache par pages, comme une mémoire virtuelle, réduisant la fragmentation et augmentant fortement le débit de service. Cœur de vLLM. [ch. 09](09-inference-optimisation/README.md)
 
 **Parallélisme de pipeline** : Répartir les couches du modèle sur plusieurs GPU, chaque GPU traitant une étape. Attention aux bulles de pipeline qui réduisent l'occupation. [ch. 10](10-infrastructure/README.md)
 
@@ -542,7 +542,7 @@
 
 **Pinecone** : Service managé de base vectorielle, sans infrastructure à gérer, facturé à l'usage. [ch. 07](07-rag/README.md)
 
-**Plan-and-execute** : Stratégie d'agent qui établit d'abord un plan complet, puis exécute chaque étape. Plus stable qu'une boucle réactive, moins adaptative. [ch. 08](08-agents/README.md)
+**Plan-and-exécute** : Stratégie d'agent qui établit d'abord un plan complet, puis exécute chaque étape. Plus stable qu'une boucle réactive, moins adaptative. [ch. 08](08-agents/README.md)
 
 **Poisoning** : Voir « Data poisoning ». [ch. 13](13-securite/README.md)
 
@@ -554,9 +554,9 @@
 
 **PPO (Proximal Policy Optimization)** : Algorithme de RL utilisé dans le RLHF classique, avec une contrainte de proximité entre l'ancienne et la nouvelle politique. [ch. 05](05-llm/README.md)
 
-**Pré-entraînement (pretraining)** : Entraînement initial, très coûteux, sur un corpus massif, avec l'objectif de prédire le token suivant ou masqué. [ch. 05](05-llm/README.md)
+**Pré-entraînement (pré-entraînement)** : Entraînement initial, très coûteux, sur un corpus massif, avec l'objectif de prédire le token suivant ou masqué. [ch. 05](05-llm/README.md)
 
-**Precision (précision, en classification)** : Part des positifs prédits qui sont réellement positifs. À distinguer du rappel. [ch. 01](01-fondamentaux/README.md)
+**Précision (précision, en classification)** : Part des positifs prédits qui sont réellement positifs. À distinguer du rappel. [ch. 01](01-fondamentaux/README.md)
 
 **Prefill** : Phase d'inférence qui traite tout le prompt en une passe, parallélisable et limitée par le calcul. Détermine le temps jusqu'au premier token. [ch. 09](09-inference-optimisation/README.md)
 
@@ -584,7 +584,7 @@
 
 **Quantization (quantification)** : Réduction du nombre de bits utilisés pour représenter poids et activations. Gagne en mémoire et en vitesse, perd en précision : à mesurer, pas à supposer. [ch. 09](09-inference-optimisation/README.md)
 
-**Quantization-aware training (QAT)** : Entraînement qui simule la quantification pour que le modèle apprenne à y résister. Meilleure qualité que la quantification post-entraînement, mais plus coûteux. [ch. 09](09-inference-optimisation/README.md)
+**Quantization-aware training (QAT)** : Entraînement qui simulé la quantification pour que le modèle apprenne à y résister. Meilleure qualité que la quantification post-entraînement, mais plus coûteux. [ch. 09](09-inference-optimisation/README.md)
 
 **Query (requête)** : Voir « Clé / Requête / Valeur », et côté RAG, la formulation envoyée au moteur de recherche. [ch. 04](04-transformers/README.md)
 
@@ -592,7 +592,7 @@
 
 ## R
 
-**RAG (Retrieval-Augmented Generation / génération augmentée par récupération)** : Architecture qui recherche des documents pertinents, les insère dans le prompt, puis demande au modèle de répondre à partir d'eux. Réduit les hallucinations et permet de citer des sources. [ch. 07](07-rag/README.md)
+**RAG (Retrieval-Augmented Génération / génération augmentée par récupération)** : Architecture qui recherche des documents pertinents, les insère dans le prompt, puis demande au modèle de répondre à partir d'eux. Réduit les hallucinations et permet de citer des sources. [ch. 07](07-rag/README.md)
 
 **RAGAS** : Bibliothèque et cadre d'évaluation de RAG, mesurant notamment la fidélité au contexte et la pertinence des documents récupérés. [ch. 07](07-rag/README.md)
 
@@ -602,7 +602,7 @@
 
 **Reasoning model (modèle de raisonnement)** : Modèle entraîné à produire une longue chaîne de raisonnement avant la réponse finale, avec un budget de calcul à l'inférence ajustable. Plus précis sur les tâches difficiles, plus lent et plus cher. [ch. 05](05-llm/README.md)
 
-**Récupération (retrieval)** : Etape qui sélectionne les documents pertinents parmi un corpus indexé. Peut être lexicale, dense ou hybride. [ch. 07](07-rag/README.md)
+**Récupération (retrieval)** : Étape qui sélectionne les documents pertinents parmi un corpus indexé. Peut être lexicale, dense ou hybride. [ch. 07](07-rag/README.md)
 
 **Red teaming** : Attaque volontaire et méthodique d'un système pour découvrir ses faiblesses avant qu'un tiers ne le fasse. Inclut la génération de prompts hostiles et l'audit des outils exposés. [ch. 13](13-securite/README.md)
 
@@ -738,7 +738,7 @@
 
 **Underfitting** : Voir « Sous-apprentissage ». [ch. 01](01-fondamentaux/README.md)
 
-**Unified memory (mémoire unifiée)** : Mémoire partagée entre CPU et GPU (Apple Silicon, certains serveurs). Supprime la copie explicite des tenseurs, mais la bande passante reste inférieure à celle d'une carte dédiée. [ch. 10](10-infrastructure/README.md)
+**Unified memory (mémoire unifiée)** : Mémoire partagée entre CPU et GPU (Apple Silicon, certains serveurs). Supprimé la copie explicite des tenseurs, mais la bande passante reste inférieure à celle d'une carte dédiée. [ch. 10](10-infrastructure/README.md)
 
 **Utilisateur simulé (simulated user)** : Technique d'évaluation d'agents où un LLM joue le rôle du client ou de l'opérateur, pour tester automatiquement de nombreux scénarios. [ch. 08](08-agents/README.md)
 
@@ -752,7 +752,7 @@
 
 **Vector database** : Voir « Base de données vectorielle ». [ch. 07](07-rag/README.md)
 
-**Vérification (verifier)** : Programme qui valide automatiquement une réponse (compilation, tests, calcul formel). Consiste à déléguer la vérité au code plutôt qu'au modèle, démarche centrale des modèles de raisonnement récents. [ch. 05](05-llm/README.md)
+**Vérification (vérifier)** : Programme qui valide automatiquement une réponse (compilation, tests, calcul formel). Consiste à déléguer la vérité au code plutôt qu'au modèle, démarche centrale des modèles de raisonnement récents. [ch. 05](05-llm/README.md)
 
 **VLM (Vision-Language Model)** : Modèle qui traite simultanément images et texte : décrire, extraire, comparer, raisonner sur une image. [ch. 11](11-multimodal/README.md)
 
@@ -762,7 +762,7 @@
 
 **Vocabulaire (vocab)** : Ensemble fini de tokens connus d'un modèle. Typiquement 32 000 à 250 000 entrées ; un mot inconnu est découpé en sous-mots. [ch. 04](04-transformers/README.md)
 
-**VRAM (video RAM)** : Mémoire de la carte graphique. En pratique, c'est la contrainte dure : elle doit contenir les poids, le KV cache, les activations et le batch. [ch. 10](10-infrastructure/README.md)
+**VRAM (vidéo RAM)** : Mémoire de la carte graphique. En pratique, c'est la contrainte dure : elle doit contenir les poids, le KV cache, les activations et le batch. [ch. 10](10-infrastructure/README.md)
 
 **Warmup** : Phase initiale où le learning rate croît progressivement, ce qui évite de casser un modèle au démarrage de l'entraînement. [ch. 03](03-reseaux-de-neurones/README.md)
 
@@ -809,7 +809,7 @@
 | BM25 | Best Matching 25 | fonction de classement lexical (Okapi BM25) |
 | BPE | Byte Pair Encoding | encodage par paires d'octets |
 | CFG | Classifier-Free Guidance | guidage sans classifieur |
-| CLIP | Contrastive Language-Image Pretraining | pré-entraînement contrastif texte-image |
+| CLIP | Contrastive Language-Image Pré-entraînement | pré-entraînement contrastif texte-image |
 | CNN | Convolutional Neural Network | réseau de neurones convolutif |
 | CPU | Central Processing Unit | processeur central |
 | CUDA | Compute Unified Device Architecture | architecture de calcul unifiée pour GPU NVIDIA |
@@ -841,7 +841,7 @@
 | MCP | Model Context Protocol | protocole de contexte de modèle |
 | ML | Machine Learning | apprentissage automatique |
 | MLM | Masked Language Modeling | modélisation de langue masquée |
-| MLOps | Machine Learning Operations | industrialisation de l'apprentissage automatique |
+| MLOps | Machine Learning Opérations | industrialisation de l'apprentissage automatique |
 | MLP | Multi-Layer Perceptron | perceptron multicouche |
 | MMLU | Massive Multitask Language Understanding | compréhension linguistique multitâche massive |
 | MoE | Mixture of Experts | mélange d'experts |
@@ -857,7 +857,7 @@
 | PUE | Power Usage Effectiveness | efficacité énergétique d'un datacenter |
 | QAT | Quantization-Aware Training | entraînement conscient de la quantification |
 | QLoRA | Quantized LoRA | LoRA sur modèle quantifié |
-| RAG | Retrieval-Augmented Generation | génération augmentée par récupération |
+| RAG | Retrieval-Augmented Génération | génération augmentée par récupération |
 | ReAct | Reasoning and Acting | raisonner puis agir |
 | RGPD | General Data Protection Regulation | règlement général sur la protection des données |
 | RL | Reinforcement Learning | apprentissage par renforcement |
@@ -869,7 +869,7 @@
 | RRF | Reciprocal Rank Fusion | fusion par rang réciproque |
 | SGD | Stochastic Gradient Descent | descente de gradient stochastique |
 | SFT | Supervised Fine-Tuning | ajustement supervisé |
-| SigLIP | Sigmoid Loss for Language-Image Pretraining | perte sigmoïde pour le pré-entraînement texte-image |
+| SigLIP | Sigmoid Loss for Language-Image Pré-entraînement | perte sigmoïde pour le pré-entraînement texte-image |
 | SLM | Small Language Model | petit modèle de langage |
 | SSM | State Space Model | modèle en espace d'état |
 | SWE-bench | Software Engineering Benchmark | banc d'essai en génie logiciel |

@@ -1,7 +1,7 @@
 # Grands modèles de langage (LLM)
 
 > Ce chapitre explique ce qu'est un modèle de langage de grande taille (LLM), comment
-> il est entraîné, comment il génère du texte, et comment on l'évalue. C'est le coeur
+> il est entraîné, comment il génère du texte, et comment on l'évalue. C'est le cœur
 > technique de l'IA générative textuelle : comprendre ce chapitre conditionne tout le
 > reste (RAG, agents, fine-tuning, optimisation d'inférence).
 
@@ -50,7 +50,7 @@ ici qu'interviennent les paramètres que tu vois dans toutes les API.
 | Paramètre | Ce qu'il fait | Effet concret |
 |---|---|---|
 | Greedy | Prend toujours le token le plus probable | Déterministe, répétitif, adapté au code |
-| Temperature | Divise les logits par T avant softmax | T < 1 : plus sage ; T > 1 : plus créatif/chaotique |
+| Température | Divise les logits par T avant softmax | T < 1 : plus sage ; T > 1 : plus créatif/chaotique |
 | Top-k | Ne garde que les k tokens les plus probables | Élimine la queue improbable du vocabulaire |
 | Top-p (nucleus) | Garde le plus petit ensemble dont la somme des probs >= p | S'adapte : peu de candidats si le modèle est sûr |
 | Repetition penalty | Pénalise les tokens déjà générés | Réduit les boucles, risque de dégrader la cohérence |
@@ -60,7 +60,7 @@ Relation entre température et softmax, terme à terme :
 
 ```
 logits  : scores bruts sortis par la dernière couche (non normalisés)
-T       : temperature
+T       : température
 softmax : normalise en probabilités qui somment à 1
 
 P(token_i) = exp(logit_i / T) / somme_j exp(logit_j / T)
@@ -161,7 +161,7 @@ permet d'exploiter le web entier.
 
 ### Compute (calcul) en FLOPs
 
-> FLOPs : Floating Point Operations, opérations en virgule flottante. C'est l'unité de
+> FLOPs : Floating Point Opérations, opérations en virgule flottante. C'est l'unité de
 > mesure du travail de calcul d'un entraînement.
 
 Estimation classique pour un Transformer : le coût total d'entraînement vaut environ
@@ -322,7 +322,7 @@ Atténuation :
 - **Vérification** : citations obligatoires, croisement de plusieurs modèles.
 - **Fine-tuning** ciblé sur un domaine avec des données factuelles
   ([chapitre 06](../06-fine-tuning/README.md)).
-- **Température basse** : réduit la variance mais ne supprime pas le problème.
+- **Température basse** : réduit la variance mais ne supprimé pas le problème.
 
 Une hallucination n'est pas un bug isolable qu'on corrige une fois pour toutes : c'est
 une propriété structurelle de la génération probabiliste.
@@ -428,7 +428,7 @@ Limites concrètes :
 - Les benchmarks sont menacés par la contamination et la saturation ; l'arène humaine reste un signal utile.
 - Un LLM ne "comprend" pas : l'anthropomorphisme mène à de mauvaises décisions d'ingénierie.
 
-## Erreurs frequentes / idees recues
+## Erreurs fréquentes / idées reçues
 - "Un LLM plus gros est toujours meilleur" -> faux : les scaling laws disent qu'il faut équilibrer taille, données et calcul.
 - "Le modèle apprend pendant la conversation" -> faux : les poids sont gelés après l'entraînement ; seul le contexte change.
 - "Une hallucination est un bug qu'on peut corriger" -> faux : c'est une conséquence de l'objectif probabiliste.
