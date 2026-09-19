@@ -1,0 +1,28 @@
+# Systemes
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Modeles et donnees volumineux
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
+*.bin
+data/
+models/
+cache/
+
+# Divers
+.env
+*.log
